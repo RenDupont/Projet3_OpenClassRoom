@@ -176,6 +176,13 @@ body {
             padding-right: 7%;
         }
     }
+    &__fav {
+        transition: background-color 400ms ease;
+        &:hover {
+            background-color: $secondary-color;
+            color: $secondary-color;
+        }
+    }
     &__img {
         object-fit: cover;
         border-radius: 20px 20px 0px 0px;
@@ -219,10 +226,15 @@ body {
         gap: 10px;
         padding-top: 19px;
         >a {
+            display: flex;
+            align-items: center;
             text-decoration: none;
             color: white;
             display: flex;
             gap: 3%;
+        }
+        &--smallIcon {
+            font-size: 11px;
         }
     }
 }

@@ -2,7 +2,7 @@ body {
   box-sizing: border-box;
   margin: auto;
   font-family: "Roboto";
-  max-width: 1400px;
+  max-width: 415px;
 }
 
 .header {
@@ -168,6 +168,13 @@ body {
   padding-left: 4%;
   padding-right: 7%;
 }
+.restaurant__fav {
+  transition: background-color 400ms ease;
+}
+.restaurant__fav:hover {
+  background-color: #FF79DA;
+  color: #FF79DA;
+}
 .restaurant__img {
   object-fit: cover;
   border-radius: 20px 20px 0px 0px;
@@ -212,10 +219,15 @@ body {
   padding-top: 19px;
 }
 .footer__content > a {
+  display: flex;
+  align-items: center;
   text-decoration: none;
   color: white;
   display: flex;
   gap: 3%;
+}
+.footer__content--smallIcon {
+  font-size: 11px;
 }
 
 /*# sourceMappingURL=style.css.map */

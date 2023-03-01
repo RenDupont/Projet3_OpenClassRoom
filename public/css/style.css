@@ -214,6 +214,75 @@ body {
   font-size: 13px;
 }
 
+.imagesMenue {
+  width: 100%;
+  height: 200px;
+}
+.imagesMenue > img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.menue {
+  border-radius: 45px 45px 0px 0px;
+  position: relative;
+  background-color: #f8f8f8;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding-left: 5%;
+}
+.menue__tittle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 30px;
+  padding-right: 10%;
+}
+.menue__tittle > span {
+  font-weight: 500;
+  font-size: 26px;
+  font-family: "Shrikhand";
+}
+.menue__tittle > i {
+  font-size: 25px;
+}
+.menue__list {
+  display: flex;
+  flex-direction: column;
+}
+.menue__list--global {
+  gap: 10px;
+}
+.menue__list--section {
+  gap: 15px;
+}
+.menue__list--subSection {
+  gap: 15px;
+}
+.menue__plate {
+  background-color: white;
+  width: 94%;
+  height: 65px;
+  box-shadow: 0px 10px 15px #ddd6d6;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 2%;
+  position: relative;
+}
+.menue__plate > div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.menue__price {
+  position: absolute;
+  right: 25px;
+  top: 35px;
+}
+
 .footer {
   background-color: rgb(60, 60, 60);
   color: white;

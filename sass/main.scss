@@ -98,6 +98,7 @@ body {
 
 .functioning {
     @include flexColumn;
+    position: relative;
     gap: 20px;
 
     &__tittle {
@@ -173,7 +174,10 @@ body {
     }
     &__list {
         @include flexColumn;
-        gap: 20px;
+        gap: 20px;>a {
+            text-decoration: none;
+            color: black;
+        }
     }
     &__card {
         width: 85%;
@@ -208,6 +212,9 @@ body {
         gap: 2px;
         padding-bottom: 5px;
     }
+    &__localisation {
+        font-weight: 300;
+    }
     &__new {
         position: absolute;
         background-color: $terciary-color;
@@ -238,6 +245,11 @@ body {
     @include flexColumn;
     gap: 25px;
     padding-left: 5%;
+    >button {
+        margin-top: 20px;
+        margin-left: 15%;
+        margin-bottom: 0;
+    }
     &__tittle {
         display: flex;
         justify-content: space-between;
@@ -253,10 +265,16 @@ body {
             font-size: 25px;
         }
     }
+    &__section {
+        font-weight: 300;
+        border-bottom: solid $terciary-color;
+        width: 39px;
+        padding-bottom: 5px;
+    }
     &__list {
         @include flexColumn;
         &--global {
-            gap: 10px;
+            gap: 45px;
         }
         &--section {
             gap: 15px;
@@ -274,14 +292,23 @@ body {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding-left: 2%;
+        padding-left: 3%;
         position: relative;
         >div {
             @include flexColumn;
             gap: 3px;
         } 
     }
+    &__plateName {
+        font-weight: 600;
+        font-size: 17px;
+    }
+    &__description {
+        font-weight: 300;
+        font-size: 14px;
+    }
     &__price {
+        font-weight: 600;
         position: absolute;
         right: 25px;
         top: 35px;

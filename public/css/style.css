@@ -1,3 +1,7 @@
+.gradient {
+  background-image: linear-gradient(to bottom, #FF79DA, #9356DC);
+}
+
 body {
   box-sizing: border-box;
   margin: auto;
@@ -82,6 +86,14 @@ body {
   font-size: 17px;
   background: linear-gradient(to bottom right, #FF79DA, #9356DC);
   color: white;
+  box-shadow: 0px 10px 15px #a09b9b;
+  border: none;
+  opacity: 100%;
+  transition: all 400ms ease;
+}
+.presentation__btn:hover {
+  opacity: 80%;
+  box-shadow: 0px 15px 20px #a09b9b;
 }
 
 .functioning {
@@ -118,8 +130,8 @@ body {
   font-size: 17px;
 }
 .functioning__btn > i {
-  padding-right: 25px;
-  padding-left: 30px;
+  padding-right: 9%;
+  padding-left: 9%;
   font-size: 20px;
   color: gray;
 }
@@ -189,11 +201,8 @@ body {
   padding-right: 7%;
 }
 .restaurant__fav {
-  transition: background-color 400ms ease;
-}
-.restaurant__fav:hover {
-  background-color: #FF79DA;
-  color: #FF79DA;
+  width: 35px;
+  height: 35px;
 }
 .restaurant__img {
   object-fit: cover;
@@ -213,8 +222,8 @@ body {
 .restaurant__new {
   position: absolute;
   background-color: #99E2D0;
-  right: 15px;
-  top: 15px;
+  right: 4%;
+  top: 5%;
   height: 23px;
   width: 73px;
   text-align: center;
@@ -239,7 +248,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 25px;
-  padding-left: 5%;
 }
 .menue > button {
   margin-top: 20px;
@@ -252,6 +260,7 @@ body {
   align-items: center;
   padding-top: 30px;
   padding-right: 10%;
+  padding-left: 5%;
 }
 .menue__tittle > span {
   font-weight: 500;
@@ -283,6 +292,8 @@ body {
 }
 .menue__list--global {
   gap: 45px;
+  padding-left: 5%;
+  padding-right: 3%;
 }
 .menue__list--section {
   gap: 15px;

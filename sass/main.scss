@@ -11,6 +11,10 @@ $color-lightGray: #f8f8f8;
     flex-direction: column;
 }
 
+.gradient {
+    background-image: linear-gradient(to bottom, $secondary-color, $primary-color);
+}
+
 body {
     box-sizing: border-box;
     margin: auto;
@@ -93,6 +97,14 @@ body {
         font-size: 17px;
         background: linear-gradient(to bottom right, $secondary-color, $primary-color);
         color: white;
+        box-shadow: 0px 10px 15px #a09b9b;
+        border: none;
+        opacity: 100%;
+        transition: all 400ms ease;
+        &:hover {
+            opacity: 80%;
+            box-shadow: 0px 15px 20px #a09b9b;
+        }
     }
 }
 
@@ -100,7 +112,6 @@ body {
     @include flexColumn;
     position: relative;
     gap: 20px;
-
     &__tittle {
         font-weight: 700;
         font-size: 22px;
@@ -127,8 +138,8 @@ body {
         font-weight: 400;
         font-size: 17px;
         >i {
-            padding-right: 25px;
-            padding-left: 30px;
+            padding-right: 9%;
+            padding-left: 9%;
             font-size: 20px;
             color: gray;
         }
@@ -197,11 +208,8 @@ body {
         }
     }
     &__fav {
-        transition: background-color 400ms ease;
-        &:hover {
-            background-color: $secondary-color;
-            color: $secondary-color;
-        }
+        width: 35px;
+        height: 35px;
     }
     &__img {
         object-fit: cover;
@@ -220,8 +228,8 @@ body {
     &__new {
         position: absolute;
         background-color: $terciary-color;
-        right: 15px;
-        top: 15px;
+        right: 4%;
+        top: 5%;
         height: 23px;
         width: 73px;
         text-align: center;
@@ -246,7 +254,6 @@ body {
     background-color: $color-lightGray;
     @include flexColumn;
     gap: 25px;
-    padding-left: 5%;
     >button {
         margin-top: 20px;
         margin: auto;
@@ -258,6 +265,7 @@ body {
         align-items: center;
         padding-top: 30px;
         padding-right: 10%;
+        padding-left: 5%;
         >span {
             font-weight: 500;
             font-size: 26px;
@@ -287,6 +295,8 @@ body {
         @include flexColumn;
         &--global {
             gap: 45px;
+            padding-left: 5%;
+            padding-right: 3%;
         }
         &--section {
             gap: 15px;

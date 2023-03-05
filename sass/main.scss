@@ -11,6 +11,11 @@ $color-lightGray: #f8f8f8;
     flex-direction: column;
 }
 
+@keyframes menuAppearance  {
+    from { opacity: 0; transform: translateY(100px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 .gradient {
     background-image: linear-gradient(to bottom, $secondary-color, $primary-color);
 }
@@ -316,10 +321,46 @@ body {
         align-items: center;
         padding-left: 3%;
         position: relative;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        transform: translateY(0);
+        animation-name: menuAppearance;
+        animation-duration: 0.8s;
+        opacity: 1;
         >div {
             @include flexColumn;
             gap: 3px;
-        } 
+        }
+        &:hover {
+            &::after {
+                display: block;
+                opacity: 1;
+            }
+        }
+        &::after {
+            content: "\f058";
+            position: absolute;
+            top: 50%;
+            left: 100%;
+            transform: translate(-50%, -50%);
+            width: 40%;
+            height: 100%;
+            background-color: $terciary-color;
+            display: none;
+            font-family: "Font Awesome 6 Free";
+            color: white;
+            font-size: 30px;
+            text-align: center;
+            transition: all 4s ease;
+            opacity: 0;
+        }
+        &:nth-of-type(2) {
+            animation-delay: 0.1s;
+        }
+        &:nth-of-type(3) {
+            animation-delay: 0.2s;
+        }
     }
     &__plateName {
         font-weight: 600;
@@ -332,8 +373,8 @@ body {
     &__price {
         font-weight: 600;
         position: absolute;
-        right: 25px;
-        top: 35px;
+        right: 5%;
+        top: 50%;
     }
 }
 

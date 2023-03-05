@@ -1,3 +1,13 @@
+@keyframes menuAppearance {
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .gradient {
   background-image: linear-gradient(to bottom, #FF79DA, #9356DC);
 }
@@ -312,11 +322,45 @@ body {
   align-items: center;
   padding-left: 3%;
   position: relative;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transform: translateY(0);
+  animation-name: menuAppearance;
+  animation-duration: 0.8s;
+  opacity: 1;
 }
 .menue__plate > div {
   display: flex;
   flex-direction: column;
   gap: 3px;
+}
+.menue__plate:hover::after {
+  display: block;
+  opacity: 1;
+}
+.menue__plate::after {
+  content: "\f058";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translate(-50%, -50%);
+  width: 40%;
+  height: 100%;
+  background-color: #99E2D0;
+  display: none;
+  font-family: "Font Awesome 6 Free";
+  color: white;
+  font-size: 30px;
+  text-align: center;
+  transition: all 4s ease;
+  opacity: 0;
+}
+.menue__plate:nth-of-type(2) {
+  animation-delay: 0.1s;
+}
+.menue__plate:nth-of-type(3) {
+  animation-delay: 0.2s;
 }
 .menue__plateName {
   font-weight: 600;
@@ -329,8 +373,8 @@ body {
 .menue__price {
   font-weight: 600;
   position: absolute;
-  right: 25px;
-  top: 35px;
+  right: 5%;
+  top: 50%;
 }
 
 .footer {

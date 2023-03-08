@@ -203,6 +203,7 @@ body {
         filter: drop-shadow(0px 4px 16px rgba(0, 0, 0, 0.2));
         background-color: white;
         margin: auto;
+        position: relative;
         > div {
             display: flex;
             justify-content: space-between;
@@ -285,7 +286,7 @@ body {
         stroke: gray;
         fill: white;
         transition: all 400ms ease;
-        &:hover {
+        &:hover, &:active {
             fill: $secondary-color;
             stroke: $secondary-color;
         }

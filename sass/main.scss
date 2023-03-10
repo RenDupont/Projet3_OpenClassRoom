@@ -144,6 +144,7 @@ body {
     @include loadding;
     justify-content: space-around;
     align-items: center;
+    position: relative;
     &__tittle {
         font-weight: 700;
         font-size: 22px;
@@ -172,7 +173,7 @@ body {
         border: none;
         opacity: 100%;
         transition: all 400ms ease;
-        &:hover {
+        &:hover, &:active {
             opacity: 80%;
             box-shadow: 0px 15px 20px #a09b9b;
         }
@@ -210,8 +211,8 @@ body {
         font-weight: 400;
         font-size: 17px;
         >i {
-            padding-right: 9%;
-            padding-left: 9%;
+            padding-right: 8%;
+            padding-left: 8%;
             font-size: 20px;
             color: gray;
         }
@@ -284,6 +285,8 @@ body {
     &__fav {
         width: 35px;
         height: 35px;
+        position: absolute;
+        right: 6%;
     }
     &__img {
         object-fit: cover;

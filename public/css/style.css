@@ -108,7 +108,7 @@ body {
 .header--menue {
   display: flex;
   align-items: center;
-  gap: 20%;
+  gap: 17%;
   padding-left: 20px;
   box-shadow: none;
 }
@@ -214,15 +214,15 @@ body {
   font-size: 17px;
 }
 .functioning__btn > i {
-  padding-right: 8%;
-  padding-left: 8%;
+  padding-right: 6%;
+  padding-left: 7%;
   font-size: 20px;
   color: gray;
 }
-.functioning__btn:hover {
+.functioning__btn:hover, .functioning__btn:active {
   background-color: #f6eaf8;
 }
-.functioning__btn:hover > i {
+.functioning__btn:hover > i, .functioning__btn:active > i {
   color: #9356DC;
 }
 .functioning__btnNumber {
@@ -266,10 +266,6 @@ body {
   gap: 20px;
   margin-bottom: 50px;
 }
-.restaurant__list > a {
-  text-decoration: none;
-  color: black;
-}
 .restaurant__card {
   width: 85%;
   border-radius: 20px;
@@ -277,6 +273,10 @@ body {
   background-color: white;
   margin: auto;
   position: relative;
+}
+.restaurant__card > a {
+  text-decoration: none;
+  color: black;
 }
 .restaurant__card > div {
   display: flex;
@@ -291,18 +291,21 @@ body {
   height: 35px;
   position: absolute;
   right: 6%;
+  bottom: 8%;
 }
 .restaurant__img {
   object-fit: cover;
   border-radius: 20px 20px 0px 0px;
   width: 100%;
-  height: 150px;
+  height: 180px;
 }
 .restaurant__description {
   display: flex;
   flex-direction: column;
-  gap: 2px;
-  padding-bottom: 5px;
+  gap: 5px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  padding-top: 10px;
 }
 .restaurant__localisation {
   font-weight: 300;
@@ -327,6 +330,7 @@ body {
 .imagesMenue > img {
   width: 100%;
   object-fit: cover;
+  height: 240px;
 }
 
 .menue {

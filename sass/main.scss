@@ -109,7 +109,7 @@ body {
     &--menue {
         display: flex;
         align-items: center;
-        gap: 20%;
+        gap: 17%;
         padding-left: 20px;
         box-shadow: none;
     }
@@ -211,12 +211,12 @@ body {
         font-weight: 400;
         font-size: 17px;
         >i {
-            padding-right: 8%;
-            padding-left: 8%;
+            padding-right: 6%;
+            padding-left: 7%;
             font-size: 20px;
             color: gray;
         }
-        &:hover {
+        &:hover, &:active {
             background-color: #f6eaf8;
             >i {
                 color: $primary-color;
@@ -261,10 +261,6 @@ body {
         @include flexColumn;
         gap: 20px;
         margin-bottom: 50px;
-        >a {
-            text-decoration: none;
-            color: black;
-        }
     }
     &__card {
         width: 85%;
@@ -273,6 +269,10 @@ body {
         background-color: white;
         margin: auto;
         position: relative;
+        >a {
+            text-decoration: none;
+            color: black;
+        }
         > div {
             display: flex;
             justify-content: space-between;
@@ -287,17 +287,20 @@ body {
         height: 35px;
         position: absolute;
         right: 6%;
+        bottom: 8%;
     }
     &__img {
         object-fit: cover;
         border-radius: 20px 20px 0px 0px;
         width: 100%;
-        height: 150px;
+        height: 180px;
     }
     &__description {
         @include flexColumn;
-        gap: 2px;
-        padding-bottom: 5px;
+        gap: 5px;
+        margin-bottom: 20px;
+        padding-left: 10px;
+        padding-top: 10px;
     }
     &__localisation {
         font-weight: 300;
@@ -322,6 +325,7 @@ body {
     >img {
         width: 100%;
         object-fit: cover;
+        height: 240px;
     }
 }
 

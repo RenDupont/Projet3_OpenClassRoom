@@ -37,7 +37,7 @@ body {
     box-sizing: border-box;
     margin: auto;
     font-family: $font-family-main;
-    max-width: 415px;
+    max-width: 1400px;
     opacity: 1;
 }
 .section {
@@ -85,6 +85,12 @@ body {
                 animation: spinner 2s cubic-bezier(1,-0.36,1,-0.31);
             }
         }
+    }
+    @media screen and (width > 499px) and (width < 925px) {
+        height: 1710px;
+    }
+    @media screen and (width >= 925px) {
+        height: 1250px;
     }
 }
 
@@ -239,6 +245,37 @@ body {
             top: 15%;
         }
     }
+    @media screen and (width > 499px) and (width < 925px) {
+        &__listBtn {
+            > div {
+                justify-content: flex-start;
+            }
+        }
+        &__btn {
+            width: 290px;
+            margin-left: 9%;
+        }
+    }
+    @media screen and (width >= 925px) {
+        &__tittle {
+            padding-left: 3%;
+        }
+        &__listBtn {
+            flex-direction: row;
+            justify-content: space-around;
+            gap: 0;
+            >div {
+                position: relative;
+                align-items: flex-start;
+            }
+        }
+        &__btnNumber {
+            left: 47%;
+        }
+        &__btn {
+            width: 260px;    
+        }
+    }
 }
 
 .restaurant {
@@ -316,6 +353,36 @@ body {
         padding-top: 10px;
         color: #025b02;
         font-size: 13px;
+    }
+
+    @media screen and (width > 499px) and (width < 925px) {
+        &__list {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            padding: 0% 1% 0% 1%;
+        }
+        &__card {
+            width: 40%;
+            margin: 0;
+            min-width: 210px;
+        }
+    }
+    @media screen and (width >= 925px) {
+        &__tittle {
+            padding-left: 3%;
+        }
+        &__list {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            padding: 0% 1% 0% 1%;
+        }
+        &__card {
+            width: 23%;
+            margin: 0;
+            min-width: 210px;
+        }
     }
 }
 
@@ -481,6 +548,20 @@ body {
         }
         &--smallIcon {
             font-size: 11px;
+        }
+    }
+    @media screen and (width > 499px) and (width < 925px) {
+        &__content {
+            >a {
+                gap: 1%;
+            }
+        }
+    }
+    @media screen and (width >= 925px) {
+        &__content {
+            >a {
+                gap: 1%;
+            }
         }
     }
 }

@@ -34,7 +34,7 @@ body {
   box-sizing: border-box;
   margin: auto;
   font-family: "Roboto";
-  max-width: 415px;
+  max-width: 1400px;
   opacity: 1;
 }
 
@@ -84,6 +84,16 @@ body {
   border-top-color: #99E2D0;
   border-bottom-color: #99E2D0;
   animation: spinner 2s cubic-bezier(1, -0.36, 1, -0.31);
+}
+@media screen and (width > 499px) and (width < 925px) {
+  .section {
+    height: 1710px;
+  }
+}
+@media screen and (width >= 925px) {
+  .section {
+    height: 1250px;
+  }
 }
 
 .header {
@@ -241,6 +251,35 @@ body {
   left: 32%;
   top: 15%;
 }
+@media screen and (width > 499px) and (width < 925px) {
+  .functioning__listBtn > div {
+    justify-content: flex-start;
+  }
+  .functioning__btn {
+    width: 290px;
+    margin-left: 9%;
+  }
+}
+@media screen and (width >= 925px) {
+  .functioning__tittle {
+    padding-left: 3%;
+  }
+  .functioning__listBtn {
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 0;
+  }
+  .functioning__listBtn > div {
+    position: relative;
+    align-items: flex-start;
+  }
+  .functioning__btnNumber {
+    left: 47%;
+  }
+  .functioning__btn {
+    width: 260px;
+  }
+}
 
 .restaurant {
   background-color: #f8f8f8;
@@ -321,6 +360,35 @@ body {
   padding-top: 10px;
   color: #025b02;
   font-size: 13px;
+}
+@media screen and (width > 499px) and (width < 925px) {
+  .restaurant__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 0% 1% 0% 1%;
+  }
+  .restaurant__card {
+    width: 40%;
+    margin: 0;
+    min-width: 210px;
+  }
+}
+@media screen and (width >= 925px) {
+  .restaurant__tittle {
+    padding-left: 3%;
+  }
+  .restaurant__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 0% 1% 0% 1%;
+  }
+  .restaurant__card {
+    width: 23%;
+    margin: 0;
+    min-width: 210px;
+  }
 }
 
 .imagesMenue {
@@ -489,6 +557,16 @@ body {
 }
 .footer__content--smallIcon {
   font-size: 11px;
+}
+@media screen and (width > 499px) and (width < 925px) {
+  .footer__content > a {
+    gap: 1%;
+  }
+}
+@media screen and (width >= 925px) {
+  .footer__content > a {
+    gap: 1%;
+  }
 }
 
 /*.spinner {

@@ -42,6 +42,7 @@ body {
   position: absolute;
   height: 1770px;
   width: 100%;
+  max-width: 1400px;
 }
 .section__loader {
   width: 50px;
@@ -125,6 +126,18 @@ body {
 .header__goBack {
   color: black;
   font-size: 20px;
+}
+@media screen and (width > 499px) and (width < 925px) {
+  .header--menue {
+    gap: 35%;
+    padding-left: 30px;
+  }
+}
+@media screen and (width >= 925px) {
+  .header--menue {
+    gap: 35%;
+    padding-left: 30px;
+  }
 }
 
 .localisation {
@@ -378,6 +391,9 @@ body {
   .restaurant__tittle {
     padding-left: 3%;
   }
+  .restaurant__tittle--modifier {
+    padding: 0;
+  }
   .restaurant__list {
     flex-direction: row;
     flex-wrap: wrap;
@@ -399,6 +415,12 @@ body {
   width: 100%;
   object-fit: cover;
   height: 240px;
+}
+@media screen and (width >= 925px) {
+  .imagesMenue > img {
+    object-fit: fill;
+    height: 250px;
+  }
 }
 
 .menue {
@@ -526,6 +548,21 @@ body {
   right: 5%;
   top: 50%;
 }
+@media screen and (width >= 925px) {
+  .menue__list--global {
+    gap: 25px;
+    padding-left: 2%;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+  .menue__plate {
+    width: 100%;
+    min-width: 280px;
+  }
+  .menue > button {
+    margin-top: 40px;
+  }
+}
 
 .footer {
   background-color: rgb(60, 60, 60);
@@ -564,6 +601,9 @@ body {
   }
 }
 @media screen and (width >= 925px) {
+  .footer {
+    padding-left: 3%;
+  }
   .footer__content > a {
     gap: 1%;
   }

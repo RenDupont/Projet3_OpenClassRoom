@@ -44,6 +44,7 @@ body {
     position: absolute;
     height: 1770px;
     width: 100%;
+    max-width: 1400px;
     &__loader {
         width: 50px;
         height: 50px;
@@ -122,6 +123,18 @@ body {
     &__goBack {
         color: black;
         font-size: 20px;
+    }
+    @media screen and (width > 499px) and (width < 925px) {
+        &--menue {
+            gap: 35%;
+            padding-left: 30px;
+        }
+    }
+    @media screen and (width >= 925px) {
+        &--menue {
+            gap: 35%;
+            padding-left: 30px;
+        }
     }
 }
 
@@ -371,6 +384,9 @@ body {
     @media screen and (width >= 925px) {
         &__tittle {
             padding-left: 3%;
+            &--modifier {
+                padding: 0;
+            }
         }
         &__list {
             flex-direction: row;
@@ -393,6 +409,15 @@ body {
         width: 100%;
         object-fit: cover;
         height: 240px;
+    }
+    @media screen and (width > 499px) and (width < 925px) {
+        
+    }
+    @media screen and (width >= 925px) {
+        >img {
+            object-fit: fill;
+            height: 250px;
+        }
     }
 }
 
@@ -519,6 +544,28 @@ body {
         right: 5%;
         top: 50%;
     }
+
+    @media screen and (width > 499px) and (width < 925px) {
+
+    }
+    @media screen and (width >= 925px) {
+        &__list {
+            &--global {
+                gap: 25px;
+                padding-left: 2%;
+                flex-direction: row;
+                justify-content: space-evenly;
+            }
+        }
+        &__plate {
+            width: 100%;
+            min-width: 280px;
+        }
+        >button {
+            margin-top: 40px;
+        }
+    }
+    
 }
 
 .footer {
@@ -558,6 +605,7 @@ body {
         }
     }
     @media screen and (width >= 925px) {
+        padding-left: 3%;
         &__content {
             >a {
                 gap: 1%;

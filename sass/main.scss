@@ -116,7 +116,7 @@ body {
     &--menue {
         display: flex;
         align-items: center;
-        gap: 17%;
+        gap: 24%;
         padding-left: 20px;
         box-shadow: none;
     }
@@ -126,7 +126,7 @@ body {
     }
     @media screen and (width > 499px) and (width < 925px) {
         &--menue {
-            gap: 35%;
+            gap: 30%;
             padding-left: 30px;
         }
     }
@@ -421,6 +421,7 @@ body {
     }
 }
 
+
 .menue {
     border-radius: 45px 45px 0px 0px;
     position: relative;
@@ -451,11 +452,11 @@ body {
     }
     &__fav {
         stroke: gray;
-        fill: white;
+        fill-opacity: 0;
         transition: all 400ms ease;
         &:hover, &:active {
-            fill: $secondary-color;
-            stroke: $secondary-color;
+            fill-opacity: 1;
+            stroke: $primary-color;
         }
     }
     &__section {
@@ -546,7 +547,21 @@ body {
     }
 
     @media screen and (width > 499px) and (width < 925px) {
-
+        &__section {
+            width: auto;
+        }
+        &__list {
+            align-items: center;
+            &--section {
+                width: 100%;
+            }
+            &--subSection {
+                width: 100%;
+            }
+        }
+        &__plate {
+            width: 65%;
+        }
     }
     @media screen and (width >= 925px) {
         &__list {

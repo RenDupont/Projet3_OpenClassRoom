@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @keyframes menuAppearance {
   from {
     opacity: 0;
@@ -493,38 +492,38 @@ body {
   padding-left: 3%;
   position: relative;
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   transform: translateY(0);
   animation-name: menuAppearance;
   animation-duration: 0.8s;
-  opacity: 1;
+  /*&:hover {
+      &::after {
+          display: block;
+          opacity: 1;
+      }
+  }
+  &::after {
+      content: "\f058";
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      transform: translate(-50%, -50%);
+      width: 40%;
+      height: 100%;
+      background-color: $terciary-color;
+      display: none;
+      font-family: "Font Awesome 6 Free";
+      color: white;
+      font-size: 30px;
+      text-align: center;
+      transition: all 4s ease;
+      opacity: 0;
+  }*/
 }
-.menue__plate > div {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
+.menue__plate:hover .menue__check {
+  transform: translateX(0%);
 }
-.menue__plate:hover::after {
-  display: block;
-  opacity: 1;
-}
-.menue__plate::after {
-  content: "\f058";
-  position: absolute;
-  top: 50%;
-  left: 100%;
-  transform: translate(-50%, -50%);
-  width: 40%;
-  height: 100%;
-  background-color: #99E2D0;
-  display: none;
-  font-family: "Font Awesome 6 Free";
-  color: white;
-  font-size: 30px;
-  text-align: center;
-  transition: all 4s ease;
-  opacity: 0;
+.menue__plate:hover .menue__price {
+  transform: translateX(-50px);
 }
 .menue__plate:nth-of-type(2) {
   animation-delay: 0.1s;
@@ -532,19 +531,45 @@ body {
 .menue__plate:nth-of-type(3) {
   animation-delay: 0.2s;
 }
+.menue__description {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
 .menue__plateName {
   font-weight: 600;
   font-size: 17px;
 }
-.menue__description {
+.menue__subDescription {
   font-weight: 300;
   font-size: 14px;
 }
 .menue__price {
   font-weight: 600;
   position: absolute;
-  right: 5%;
+  right: 10%;
   top: 50%;
+  transform: translateX(15px);
+  transition: all 0.2s ease;
+}
+.menue__check {
+  width: 70px;
+  background-color: #99E2D0;
+  height: 100%;
+  position: absolute;
+  right: 0%;
+  transform: translateX(100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+.menue__check > i {
+  color: white;
+  font-size: 25px;
 }
 @media screen and (width > 499px) and (width < 925px) {
   .menue__section {
@@ -624,47 +649,5 @@ body {
     gap: 1%;
   }
 }
-
-/*.spinner {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(255, 255, 255, 0.8);
-  z-index: 9999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  &:after {
-    content: "";
-    display: block;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    border: 4px solid #333;
-    border-top-color: transparent;
-    animation: spinner 1.5s linear infinite;
-  }
-
-  // Délai d'affichage de 1 à 3 secondes
-  animation: show-spinner 1s linear 1s forwards;
-
-  @keyframes show-spinner {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-
-  @keyframes spinner {
-    to {
-      transform: rotate(360deg);
-    }
-  }
-}*/
 
 /*# sourceMappingURL=style.css.map */

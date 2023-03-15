@@ -22,6 +22,10 @@ $color-lightGray: #f8f8f8;
     from { opacity: 0; }
     to { opacity: 1; }
 }
+@keyframes z_index {
+    from { z-index: 0; }
+    to { z-index: 1; }
+}
 @keyframes spinner {
     from { opacity: 1; }
     to {
@@ -41,19 +45,20 @@ body {
     opacity: 1;
 }
 .section {
-    position: absolute;
-    height: 1770px;
+    position: fixed;
+    height: 100%;
     width: 100%;
     max-width: 1400px;
+    animation: z_index 2s;
     &__loader {
         width: 50px;
         height: 50px;
-        vertical-align: middle;
-        position: sticky;
+        position: absolute;
+        left: 50%;
+        bottom: 50%;
+        margin-left: -28px;
         opacity: 0;
         &--triple {
-            margin: auto;
-            top: 50%;
             border-radius: 50px;
             border: 6px solid transparent;
             border-top-color: $primary-color;
@@ -87,19 +92,13 @@ body {
             }
         }
     }
-    @media screen and (width > 499px) and (width < 925px) {
-        height: 1710px;
-    }
-    @media screen and (width >= 925px) {
-        height: 1250px;
-    }
 }
 
 .header {
     width: 100%;
     height: 60px;
     text-align: center;
-    box-shadow: 0px 1px 10px rgb(177, 177, 177);
+    box-shadow: 0px 12px 10px -6px rgb(177, 177, 177);
     position: relative;
     &__accueil {
         @include loadding;
@@ -116,25 +115,14 @@ body {
     &--menue {
         display: flex;
         align-items: center;
-        gap: 24%;
-        padding-left: 20px;
+        justify-content: center;
         box-shadow: none;
     }
     &__goBack {
         color: black;
         font-size: 20px;
-    }
-    @media screen and (width > 499px) and (width < 925px) {
-        &--menue {
-            gap: 30%;
-            padding-left: 30px;
-        }
-    }
-    @media screen and (width >= 925px) {
-        &--menue {
-            gap: 35%;
-            padding-left: 30px;
-        }
+        position: absolute;
+        left: 5%;
     }
 }
 
@@ -348,7 +336,7 @@ body {
     &__description {
         @include flexColumn;
         gap: 5px;
-        margin-bottom: 20px;
+        padding-bottom: 20px;
         padding-left: 10px;
         padding-top: 10px;
     }
@@ -411,12 +399,15 @@ body {
         height: 240px;
     }
     @media screen and (width > 499px) and (width < 925px) {
-        
+        height: 315px;
+        >img {
+            height: 350px;
+        }
     }
     @media screen and (width >= 925px) {
+        height: 455px;
         >img {
-            object-fit: fill;
-            height: 250px;
+            height: 495px;
         }
     }
 }
@@ -454,7 +445,7 @@ body {
         stroke: gray;
         fill-opacity: 0;
         transition: all 400ms ease;
-        &:hover, &:active {
+        &:focus, &:active {
             fill-opacity: 1;
             stroke: $primary-color;
         }
@@ -567,7 +558,8 @@ body {
         &__list {
             &--global {
                 gap: 25px;
-                padding-left: 2%;
+                padding-left: 5%;
+                padding-right: 6%;
                 flex-direction: row;
                 justify-content: space-evenly;
             }

@@ -495,35 +495,9 @@ body {
   transform: translateY(0);
   animation-name: menuAppearance;
   animation-duration: 0.8s;
-  /*&:hover {
-      &::after {
-          display: block;
-          opacity: 1;
-      }
-  }
-  &::after {
-      content: "\f058";
-      position: absolute;
-      top: 50%;
-      left: 100%;
-      transform: translate(-50%, -50%);
-      width: 40%;
-      height: 100%;
-      background-color: $terciary-color;
-      display: none;
-      font-family: "Font Awesome 6 Free";
-      color: white;
-      font-size: 30px;
-      text-align: center;
-      transition: all 4s ease;
-      opacity: 0;
-  }*/
 }
 .menue__plate:hover .menue__check {
-  transform: translateX(0%);
-}
-.menue__plate:hover .menue__price {
-  transform: translateX(-50px);
+  width: 5em;
 }
 .menue__plate:nth-of-type(2) {
   animation-delay: 0.1s;
@@ -534,34 +508,40 @@ body {
 .menue__description {
   display: flex;
   flex-direction: column;
-  gap: 3px;
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
+  gap: 3px;
+  width: 80%;
 }
 .menue__plateName {
   font-weight: 600;
   font-size: 17px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .menue__subDescription {
   font-weight: 300;
   font-size: 14px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .menue__price {
   font-weight: 600;
+  width: 2em;
+  height: 100%;
+  margin-right: 10px;
+}
+.menue__price > p {
   position: absolute;
-  right: 10%;
-  top: 50%;
-  transform: translateX(15px);
-  transition: all 0.2s ease;
+  top: 19px;
 }
 .menue__check {
-  width: 70px;
+  width: 0;
   background-color: #99E2D0;
   height: 100%;
-  position: absolute;
-  right: 0%;
-  transform: translateX(100%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -591,14 +571,17 @@ body {
 @media screen and (width >= 925px) {
   .menue__list--global {
     gap: 25px;
-    padding-left: 5%;
-    padding-right: 6%;
+    padding-left: 0;
+    padding-right: 0;
     flex-direction: row;
     justify-content: space-evenly;
+    width: 99%;
+  }
+  .menue__list--section {
+    width: 27%;
   }
   .menue__plate {
     width: 100%;
-    min-width: 280px;
   }
   .menue > button {
     margin-top: 40px;

@@ -13,7 +13,11 @@ $color-lightGray: #f8f8f8;
 @mixin loadding {
     animation: loadding 2s cubic-bezier(1,-0.36,1,-0.31);
 }
-
+@mixin hiddenEllipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
 @keyframes menuAppearance  {
     from { opacity: 0; transform: translateY(100px); }
     to { opacity: 1; transform: translateY(0); }
@@ -486,34 +490,8 @@ body {
         animation-name: menuAppearance;
         animation-duration: 0.8s;
         &:hover .menue__check {
-            transform: translateX(0%);
+            width: 5em;
         }
-        &:hover .menue__price {
-            transform: translateX(-50px);
-        }
-        /*&:hover {
-            &::after {
-                display: block;
-                opacity: 1;
-            }
-        }
-        &::after {
-            content: "\f058";
-            position: absolute;
-            top: 50%;
-            left: 100%;
-            transform: translate(-50%, -50%);
-            width: 40%;
-            height: 100%;
-            background-color: $terciary-color;
-            display: none;
-            font-family: "Font Awesome 6 Free";
-            color: white;
-            font-size: 30px;
-            text-align: center;
-            transition: all 4s ease;
-            opacity: 0;
-        }*/
         &:nth-of-type(2) {
             animation-delay: 0.1s;
         }
@@ -523,34 +501,34 @@ body {
     }
     &__description {
         @include flexColumn;
+        @include hiddenEllipsis;
         gap: 3px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        width: 80%;
     }
     &__plateName {
         font-weight: 600;
         font-size: 17px;
+        @include hiddenEllipsis;
     }
     &__subDescription {
         font-weight: 300;
         font-size: 14px;
+        @include hiddenEllipsis;
     }
     &__price {
         font-weight: 600;
-        position: absolute;
-        right: 10%;
-        top: 50%;
-        transform: translateX(15px);
-        transition: all 0.2s ease;
+        width: 2em;
+        height: 100%;
+        margin-right: 10px;
+        >p {
+            position: absolute;
+            top: 19px;
+        }
     }
     &__check {
-        width: 70px;
+        width: 0;
         background-color: $terciary-color;
         height: 100%;
-        position: absolute;
-        right: 0%;
-        transform: translateX(100%);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -582,15 +560,18 @@ body {
         &__list {
             &--global {
                 gap: 25px;
-                padding-left: 5%;
-                padding-right: 6%;
+                padding-left: 0;
+                padding-right: 0;
                 flex-direction: row;
                 justify-content: space-evenly;
+                width: 99%;
+            }
+            &--section {
+                width: 27%;
             }
         }
         &__plate {
             width: 100%;
-            min-width: 280px;
         }
         >button {
             margin-top: 40px;

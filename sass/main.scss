@@ -6,24 +6,132 @@ $secondary-color: #FF79DA;
 $terciary-color: #99E2D0;
 $color-lightGray: #f8f8f8;
 
+@mixin flexColumn {
+    display: flex;
+    flex-direction: column;
+}
+@mixin loadding {
+    animation: loadding 2s cubic-bezier(1,-0.36,1,-0.31);
+}
+@mixin hiddenEllipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+@keyframes menuAppearance  {
+    from { opacity: 0; transform: translateY(100px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes loadding {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes z_indexSection {
+    from { position: fixed; }
+    to { position: relative }
+}
+@keyframes Lspinner {
+    from { opacity: 1; }
+    to {
+      transform: rotate(360deg); opacity: 0;
+    }
+}
+@keyframes CheckSpinner {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(180deg); }
+}
+
+.gradient {
+    background-image: linear-gradient(to bottom, $secondary-color, $primary-color);
+}
+
 body {
     box-sizing: border-box;
     margin: auto;
     font-family: $font-family-main;
-    max-width: 415px;
+    max-width: 1400px;
+    opacity: 1;
+}
+
+.section {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    max-width: 1400px;
+    animation: z_indexSection 2s cubic-bezier(1,-0.36,1,-0.31);
+    &__loader {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        left: 50%;
+        bottom: 50%;
+        margin-left: -28px;
+        opacity: 0;
+        &--triple {
+            border-radius: 50px;
+            border: 6px solid transparent;
+            border-top-color: $primary-color;
+            border-bottom-color: $primary-color;
+            animation: Lspinner 2s cubic-bezier(1,-0.36,1,-0.31);
+            &::after {
+                content:'';
+                position: absolute;
+                top: 5px;
+                left: 5px;
+                right: 5px;
+                bottom: 5px;
+                border-radius: 50px;
+                border: 6px solid transparent;
+                border-top-color: $secondary-color;
+                border-bottom-color: $secondary-color;
+                animation: Lspinner 2s cubic-bezier(1,-0.36,1,-0.31);
+            }
+            &::before {
+                content:'';
+                position: absolute;
+                top: 15px;
+                left: 15px;
+                right: 15px;
+                bottom: 15px;
+                border-radius: 50px;
+                border: 6px solid transparent;
+                border-top-color: $terciary-color;
+                border-bottom-color: $terciary-color;
+                animation: Lspinner 2s cubic-bezier(1,-0.36,1,-0.31);
+            }
+        }
+    }
 }
 
 .header {
     width: 100%;
     height: 60px;
     text-align: center;
-    box-shadow: 0px 1px 10px rgb(177, 177, 177);
+    box-shadow: 0px 12px 10px -6px rgb(177, 177, 177);
     position: relative;
+    &__accueil {
+        @include loadding;
+    }
     &__tittle {
         font-family: $font-family-tittle;
         font-size: 30px;
         margin: 0;
         padding-top: 10px;
+        &--menue {
+            padding-top: 0;
+        }
+    }
+    &--menue {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: none;
+    }
+    &__goBack {
+        color: black;
+        font-size: 20px;
+        position: absolute;
+        left: 2%;
     }
 }
 
@@ -33,6 +141,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    @include loadding;
     > i {
         padding-right: 20px;
         color: rgb(55, 55, 55);
@@ -47,10 +156,11 @@ body {
     background-color: $color-lightGray;
     margin-top: 0;
     height: 290px;
-    display: flex;
-    flex-direction: column;
+    @include flexColumn;
+    @include loadding;
     justify-content: space-around;
     align-items: center;
+    position: relative;
     &__tittle {
         font-weight: 700;
         font-size: 22px;
@@ -75,14 +185,22 @@ body {
         font-size: 17px;
         background: linear-gradient(to bottom right, $secondary-color, $primary-color);
         color: white;
+        box-shadow: 0px 10px 15px #a09b9b;
+        border: none;
+        opacity: 100%;
+        transition: all 400ms ease;
+        &:hover, &:active {
+            opacity: 80%;
+            box-shadow: 0px 15px 20px #a09b9b;
+        }
     }
 }
 
 .functioning {
-    display: flex;
-    flex-direction: column;
+    @include flexColumn;
+    @include loadding;
+    position: relative;
     gap: 20px;
-
     &__tittle {
         font-weight: 700;
         font-size: 22px;
@@ -90,8 +208,7 @@ body {
         padding-left: 7%;
     }
     &__listBtn {
-        display: flex;
-        flex-direction: column;
+        @include flexColumn;
         gap: 20px;
         > div {
             display: flex;
@@ -110,12 +227,12 @@ body {
         font-weight: 400;
         font-size: 17px;
         >i {
-            padding-right: 25px;
-            padding-left: 30px;
+            padding-right: 6%;
+            padding-left: 7%;
             font-size: 20px;
             color: gray;
         }
-        &:hover {
+        &:hover, &:active {
             background-color: #f6eaf8;
             >i {
                 color: $primary-color;
@@ -138,12 +255,53 @@ body {
             top: 15%;
         }
     }
+    @media screen and (width > 499px) and (width < 925px) {
+        align-items: center;
+        &__tittle {
+            padding-left: 2%;
+        }
+        &__listBtn {
+            align-items: center;
+            >div {
+                width: 400px;
+                position: relative;
+            }
+        }
+        &__btn {
+            width: 350px;
+            margin-left: 9%;
+            >i {
+                padding-left: 10%;
+                padding-left: 10%;
+            }
+        }
+    }
+    @media screen and (width >= 925px) {
+        &__tittle {
+            padding-left: 3%;
+        }
+        &__listBtn {
+            flex-direction: row;
+            justify-content: space-around;
+            gap: 0;
+            >div {
+                position: relative;
+                align-items: flex-start;
+            }
+        }
+        &__btnNumber {
+            left: 47%;
+        }
+        &__btn {
+            width: 260px;    
+        }
+    }
 }
 
 .restaurant {
     background-color: $color-lightGray;
-    display: flex;
-    flex-direction: column;
+    @include flexColumn;
+    @include loadding;
     margin-top: 60px;
     gap: 25px;
     &__tittle {
@@ -157,9 +315,9 @@ body {
         }
     }
     &__list {
-        display: flex;
-        flex-direction: column;
+        @include flexColumn;
         gap: 20px;
+        margin-bottom: 50px;
     }
     &__card {
         width: 85%;
@@ -167,6 +325,11 @@ body {
         filter: drop-shadow(0px 4px 16px rgba(0, 0, 0, 0.2));
         background-color: white;
         margin: auto;
+        position: relative;
+        >a {
+            text-decoration: none;
+            color: black;
+        }
         > div {
             display: flex;
             justify-content: space-between;
@@ -177,29 +340,33 @@ body {
         }
     }
     &__fav {
-        transition: background-color 400ms ease;
-        &:hover {
-            background-color: $secondary-color;
-            color: $secondary-color;
-        }
+        width: 35px;
+        height: 35px;
+        position: absolute;
+        right: 6%;
+        bottom: 8%;
     }
     &__img {
         object-fit: cover;
         border-radius: 20px 20px 0px 0px;
         width: 100%;
-        height: 150px;
+        height: 180px;
     }
     &__description {
-        display: flex;
-        flex-direction: column;
-        gap: 2px;
-        padding-bottom: 5px;
+        @include flexColumn;
+        gap: 5px;
+        padding-bottom: 20px;
+        padding-left: 10px;
+        padding-top: 10px;
+    }
+    &__localisation {
+        font-weight: 300;
     }
     &__new {
         position: absolute;
         background-color: $terciary-color;
-        right: 15px;
-        top: 15px;
+        right: 4%;
+        top: 5%;
         height: 23px;
         width: 73px;
         text-align: center;
@@ -207,22 +374,249 @@ body {
         color: #025b02;
         font-size: 13px;
     }
+
+    @media screen and (width > 499px) and (width < 925px) {
+        &__list {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            padding: 0% 1% 0% 1%;
+        }
+        &__card {
+            width: 40%;
+            margin: 0;
+            min-width: 210px;
+        }
+    }
+    @media screen and (width >= 925px) {
+        &__tittle {
+            padding-left: 3%;
+            &--modifier {
+                padding: 0;
+            }
+        }
+        &__list {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            padding: 0% 1% 0% 1%;
+        }
+        &__card {
+            width: 23%;
+            margin: 0;
+            min-width: 210px;
+        }
+    }
+}
+
+.imagesMenue {
+    width: 100%;
+    height: 200px;
+    >img {
+        width: 100%;
+        object-fit: cover;
+        height: 240px;
+    }
+    @media screen and (width > 499px) and (width < 925px) {
+        height: 315px;
+        >img {
+            height: 350px;
+        }
+    }
+    @media screen and (width >= 925px) {
+        height: 455px;
+        >img {
+            height: 495px;
+        }
+    }
+}
+
+
+.menue {
+    border-radius: 45px 45px 0px 0px;
+    position: relative;
+    background-color: $color-lightGray;
+    @include flexColumn;
+    gap: 25px;
+    >button {
+        margin-top: 20px;
+        margin: auto;
+        margin-bottom: 50px;
+    }
+    &__tittle {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 30px;
+        padding-right: 10%;
+        padding-left: 5%;
+        >span {
+            font-weight: 500;
+            font-size: 26px;
+            font-family: $font-family-tittle;
+        }
+        >svg {
+            height: 35px;
+            width: 35px;
+        }
+    }
+    &__fav {
+        stroke: gray;
+        fill-opacity: 0;
+        transition: all 400ms ease;
+        &:hover, &:active {
+            fill-opacity: 1;
+            stroke: $primary-color;
+        }
+    }
+    &__section {
+        font-weight: 300;
+        border-bottom: solid $terciary-color;
+        width: 39px;
+        padding-bottom: 5px;
+    }
+    &__list {
+        @include flexColumn;
+        &--global {
+            gap: 45px;
+            padding-left: 5%;
+            padding-right: 3%;
+        }
+        &--section {
+            gap: 15px;
+        }
+        &--subSection {
+            gap: 15px;
+        }
+    }
+    &__plate {
+        background-color: white;
+        width: 94%;
+        height: 65px;
+        box-shadow: 0px 10px 15px #ddd6d6;
+        border-radius: 15px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 3%;
+        position: relative;
+        overflow: hidden;
+        transform: translateY(0);
+        animation-name: menuAppearance;
+        animation-duration: 0.8s;
+        &:hover .menue__check {
+            width: 5em;
+            >div {
+                transform: rotate(0deg);
+            }
+        }
+        &:nth-of-type(2) {
+            animation-delay: 0.1s;
+        }
+        &:nth-of-type(3) {
+            animation-delay: 0.2s;
+        }
+    }
+    &__description {
+        @include flexColumn;
+        @include hiddenEllipsis;
+        gap: 3px;
+        width: 80%;
+    }
+    &__plateName {
+        font-weight: 600;
+        font-size: 17px;
+        @include hiddenEllipsis;
+    }
+    &__subDescription {
+        font-weight: 300;
+        font-size: 14px;
+        @include hiddenEllipsis;
+    }
+    &__price {
+        font-weight: 600;
+        width: 2em;
+        height: 100%;
+        margin-right: 10px;
+        >p {
+            position: absolute;
+            top: 19px;
+        }
+    }
+    &__check {
+        width: 0;
+        background-color: $terciary-color;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.4s ease;
+        >div {
+            transform: rotate(180deg);
+            transition: all 0.4s ease;
+            >i {
+                color: white;
+                font-size: 25px;
+            }
+        }
+    }
+
+    @media screen and (width > 499px) and (width < 925px) {
+        &__section {
+            width: auto;
+        }
+        &__list {
+            align-items: center;
+            &--section {
+                width: 100%;
+            }
+            &--subSection {
+                width: 100%;
+            }
+        }
+        &__plate {
+            width: 65%;
+        }
+    }
+    @media screen and (width >= 925px) {
+        &__list {
+            &--global {
+                gap: 25px;
+                padding-left: 0;
+                padding-right: 0;
+                flex-direction: row;
+                justify-content: space-evenly;
+                width: 99%;
+            }
+            &--section {
+                width: 27%;
+            }
+        }
+        &__plate {
+            width: 100%;
+        }
+        >button {
+            margin-top: 40px;
+        }
+    }
+    
 }
 
 .footer {
     background-color: rgb(60, 60, 60);
     color: white;
-    margin-top: 60px;
     padding-left: 6%;
     padding-top: 20px;
     height: 190px;
+    &__accueil {
+        @include loadding;
+    }
     &__tittle {
         font-family: $font-family-tittle;
         font-size: 19px;
     }
     &__content {
-        display: flex;
-        flex-direction: column;
+        @include flexColumn;
         gap: 10px;
         padding-top: 19px;
         >a {
@@ -235,6 +629,21 @@ body {
         }
         &--smallIcon {
             font-size: 11px;
+        }
+    }
+    @media screen and (width > 499px) and (width < 925px) {
+        &__content {
+            >a {
+                gap: 1%;
+            }
+        }
+    }
+    @media screen and (width >= 925px) {
+        padding-left: 3%;
+        &__content {
+            >a {
+                gap: 1%;
+            }
         }
     }
 }

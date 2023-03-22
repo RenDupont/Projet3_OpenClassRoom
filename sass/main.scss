@@ -255,7 +255,7 @@ body {
             top: 15%;
         }
     }
-    @media screen and (width > 499px) and (width < 925px) {
+    @media screen and (width > 499px) and (width < 1024px) {
         align-items: center;
         &__tittle {
             padding-left: 2%;
@@ -276,7 +276,7 @@ body {
             }
         }
     }
-    @media screen and (width >= 925px) {
+    @media screen and (width >= 1024px) {
         &__tittle {
             padding-left: 3%;
         }
@@ -375,7 +375,7 @@ body {
         font-size: 13px;
     }
 
-    @media screen and (width > 499px) and (width < 925px) {
+    @media screen and (width > 499px) and (width < 1024px) {
         &__list {
             flex-direction: row;
             flex-wrap: wrap;
@@ -388,7 +388,7 @@ body {
             min-width: 210px;
         }
     }
-    @media screen and (width >= 925px) {
+    @media screen and (width >= 1024px) {
         &__tittle {
             padding-left: 3%;
             &--modifier {
@@ -417,13 +417,13 @@ body {
         object-fit: cover;
         height: 240px;
     }
-    @media screen and (width > 499px) and (width < 925px) {
+    @media screen and (width > 499px) and (width < 1024px) {
         height: 315px;
         >img {
             height: 350px;
         }
     }
-    @media screen and (width >= 925px) {
+    @media screen and (width >= 1024px) {
         height: 455px;
         >img {
             height: 495px;
@@ -561,7 +561,7 @@ body {
         }
     }
 
-    @media screen and (width > 499px) and (width < 925px) {
+    @media screen and (width > 499px) and (width < 1024px) {
         &__section {
             width: auto;
         }
@@ -578,7 +578,7 @@ body {
             width: 65%;
         }
     }
-    @media screen and (width >= 925px) {
+    @media screen and (width >= 1024px) {
         &__list {
             &--global {
                 gap: 25px;
@@ -631,14 +631,14 @@ body {
             font-size: 11px;
         }
     }
-    @media screen and (width > 499px) and (width < 925px) {
+    @media screen and (width > 499px) and (width < 1024px) {
         &__content {
             >a {
                 gap: 1%;
             }
         }
     }
-    @media screen and (width >= 925px) {
+    @media screen and (width >= 1024px) {
         padding-left: 3%;
         &__content {
             >a {

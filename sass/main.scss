@@ -41,10 +41,6 @@ $color-lightGray: #f8f8f8;
     to { transform: rotate(180deg); }
 }
 
-.gradient {
-    background-image: linear-gradient(to bottom, $secondary-color, $primary-color);
-}
-
 body {
     box-sizing: border-box;
     margin: auto;
